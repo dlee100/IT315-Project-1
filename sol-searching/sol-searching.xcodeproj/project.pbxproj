@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30159CB12433C70F0030B05C /* images in Resources */ = {isa = PBXBuildFile; fileRef = 30159CB02433C70E0030B05C /* images */; };
+		30159CB32433DBDA0030B05C /* buttonsound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 30159CB22433DBD90030B05C /* buttonsound.wav */; };
 		303AB64624283CE1002695BC /* sol-searching-landpage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 303AB64524283CE1002695BC /* sol-searching-landpage.jpg */; };
 		303AB64A24294245002695BC /* sol-objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB64924294245002695BC /* sol-objects.swift */; };
 		30EE7C7824197168008E2401 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EE7C7724197168008E2401 /* AppDelegate.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30159CB02433C70E0030B05C /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		30159CB22433DBD90030B05C /* buttonsound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buttonsound.wav; sourceTree = "<group>"; };
 		303AB64524283CE1002695BC /* sol-searching-landpage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sol-searching-landpage.jpg"; sourceTree = "<group>"; };
 		303AB64924294245002695BC /* sol-objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "sol-objects.swift"; sourceTree = "<group>"; };
 		30EE7C7424197168008E2401 /* sol-searching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sol-searching.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +64,8 @@
 		30EE7C7624197168008E2401 /* sol-searching */ = {
 			isa = PBXGroup;
 			children = (
+				30159CB22433DBD90030B05C /* buttonsound.wav */,
+				30159CB02433C70E0030B05C /* images */,
 				303AB64524283CE1002695BC /* sol-searching-landpage.jpg */,
 				30EE7C7724197168008E2401 /* AppDelegate.swift */,
 				30EE7C7924197168008E2401 /* SceneDelegate.swift */,
@@ -133,6 +139,8 @@
 			files = (
 				30EE7C842419716D008E2401 /* LaunchScreen.storyboard in Resources */,
 				303AB64624283CE1002695BC /* sol-searching-landpage.jpg in Resources */,
+				30159CB32433DBDA0030B05C /* buttonsound.wav in Resources */,
+				30159CB12433C70F0030B05C /* images in Resources */,
 				30EE7C812419716D008E2401 /* Assets.xcassets in Resources */,
 				30EE7C7F24197168008E2401 /* Main.storyboard in Resources */,
 			);

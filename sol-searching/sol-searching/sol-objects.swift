@@ -12,8 +12,10 @@ class SolInfo{
     var ObjectName:String = ""
     var ObjectImageName:String = ""
     var ObjectAU:Double = 0.0
-    var ObjectYear:Double = 0.0
+    var ObjectYear:Int = 0
     var ObjectSite:String = ""
+    var ObjectSymbol:String = ""
+    var ObjectReference:String = ""
     var ObjectDescription = ""
     
     
