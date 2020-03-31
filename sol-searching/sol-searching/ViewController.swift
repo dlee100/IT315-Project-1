@@ -11,31 +11,58 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    @IBAction func sunBtn(_ sender: Any) {
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblAU: UILabel!
+    @IBOutlet weak var lblYear: UILabel!
+    @IBOutlet weak var lblDesc: UILabel!
+    
+    var solObjArray = [SolInfo]()
+    
+    var siteURL = ""
+    
+    func setLabels(){
+        //someSound.play()
+        
+        let selectedObj = solObjArray.randomElement()
+        
+        if selectedObj != nil{
+            lblName.text = selectedObj?.ObjectName
+        
+            lblAU.text = "AU: \(String(selectedObj!.ObjectAU))"
+            
+            lblYear.text = "Year: \(String(selectedObj!.ObjectYear)) Earth days"
+            
+            let img = UIImage(named:selectedObj!.ObjectImageName)
+            //imgHTImage.image = img
+            
+            siteURL = selectedObj!.ObjectSite
+            
+            lblDesc.text = selectedObj!.ObjectDescription
+            
+            // storage mechanism
+            //let favorite = UserDefaults.standard.string(forKey: "favorite") ?? ""
+            //swFav.isOn = (selectedHike!.TrailName == favorite)
+            
+            /*
+             if imgHTImage.alpha == 0 {
+                 UIView.animate(withDuration: 3.0, animations: {
+                     self.lblName.alpha = 1.0
+                     self.imgHTImage.alpha = 1.0
+                     self.lblDesc.alpha = 1.0
+                     self.lblAlt.alpha = 1.0
+                     self.lblLen.alpha = 1.0
+                     self.swFav.alpha = 1.0
+                     self.view.backgroundColor = UIColor(red:252/255, green:202/255, blue:1/255, alpha:1)
+                 })
+             }
+             */
+            
+        }
     }
     
-    @IBAction func mercuryBtn(_ sender: Any) {
-    }
     
-    @IBAction func venusBtn(_ sender: Any) {
-    }
-    
-    @IBAction func earthBtn(_ sender: Any) {
-    }
-    
-    @IBAction func marsBtn(_ sender: Any) {
-    }
-    
-    @IBAction func jupiterBtn(_ sender: Any) {
-    }
-    
-    @IBAction func saturnBtn(_ sender: Any) {
-    }
-    
-    @IBAction func uranusBtn(_ sender: Any) {
-    }
-    
-    @IBAction func neptuneBtn(_ sender: Any) {
+    @IBAction func btnShowSol(_ sender: Any) {
+        setLabels()
     }
     
     func populateArray(){
@@ -46,6 +73,8 @@ class ViewController: UIViewController {
         sol0.ObjectYear = 0
         //sol0.ObjectSite = ""
         sol0.ObjectDescription = ""
+        solObjArray.insert(sol0, at:0)
+        
         
         let sol1 = SolInfo()
         sol1.ObjectName = "Mercury"
@@ -54,14 +83,18 @@ class ViewController: UIViewController {
         sol1.ObjectYear = 88
         //sol1.ObjectSite = ""
         sol1.ObjectDescription = ""
+        solObjArray.append(sol1)
+        
         
         let sol2 = SolInfo()
-        sol0.ObjectName = "Venus"
+        sol2.ObjectName = "Venus"
         //sol2.ObjectImageName = ""
         sol2.ObjectAU = 0.7
         sol2.ObjectYear = 225
         //sol2.ObjectSite = ""
         sol2.ObjectDescription = ""
+        solObjArray.append(sol2)
+        
         
         let sol3 = SolInfo()
         sol3.ObjectName = "Earth"
@@ -70,6 +103,8 @@ class ViewController: UIViewController {
         sol3.ObjectYear = 365
         //sol3.ObjectSite = ""
         sol3.ObjectDescription = ""
+        solObjArray.append(sol3)
+        
         
         let sol4 = SolInfo()
         sol4.ObjectName = "Mars"
@@ -78,6 +113,8 @@ class ViewController: UIViewController {
         sol4.ObjectYear = 687
         //sol4.ObjectSite = ""
         sol4.ObjectDescription = ""
+        solObjArray.append(sol4)
+        
         
         let sol5 = SolInfo()
         sol5.ObjectName = "Jupiter"
@@ -86,6 +123,8 @@ class ViewController: UIViewController {
         sol5.ObjectYear = 4300
         //sol5.ObjectSite = ""
         sol5.ObjectDescription = ""
+        solObjArray.append(sol5)
+        
         
         let sol6 = SolInfo()
         sol6.ObjectName = "Saturn"
@@ -94,6 +133,8 @@ class ViewController: UIViewController {
         sol6.ObjectYear = 11000
         //sol6.ObjectSite = ""
         sol6.ObjectDescription = ""
+        solObjArray.append(sol6)
+        
         
         let sol7 = SolInfo()
         sol7.ObjectName = "Uranus"
@@ -102,6 +143,8 @@ class ViewController: UIViewController {
         sol7.ObjectYear = 31000
         //sol7.ObjectSite = ""
         sol7.ObjectDescription = ""
+        solObjArray.append(sol7)
+        
         
         let sol8 = SolInfo()
         sol8.ObjectName = "Neptune"
@@ -110,11 +153,16 @@ class ViewController: UIViewController {
         sol8.ObjectYear = 60200
         //sol8.ObjectSite = ""
         sol8.ObjectDescription = ""
+        solObjArray.append(sol8)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        populateArray()
+        
+        setLabels()
         
     }
     
